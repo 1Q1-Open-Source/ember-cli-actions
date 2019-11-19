@@ -1,0 +1,15 @@
+name: 'Ember CLI Actions'
+description: 'Greet someone and record the time'
+inputs:
+  command:  # command to run
+    description: 'Ember CLI Command to run '
+    required: true
+    default: 'help'
+outputs:
+  project-dir: # id of output
+    description: 'The current state of the project dir when the command completes.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
